@@ -1,0 +1,47 @@
+﻿@model app.Client.Models.ViewModelProductionHistory
+
+@{
+    ViewBag.Title = "ProductionHistory";
+}
+
+<h2>ProductionHistory</h2>
+
+<div class="form-horizontal">
+    <div class="form-group">
+        <table class="table-responsive table">
+            <thead>
+                <tr>
+                    <th>EmployeeId</th>
+                    <th>Name</th>
+                    <th>DepartmentId</th>
+                    <th>Department</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model.ProductionHistoryDto)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EmployeeId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EmployeeName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DepartmentId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DepartmentName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
